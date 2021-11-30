@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/myCourses', { useNewUrlParser: true });
 //mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb+srv://admin:nichof-6vewpo-sixbaW@cluster0.1oheg.mongodb.net/myCourses?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://admin:nichof-6vewpo-sixbaW@cluster0.1oheg.mongodb.net/myCourses?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
