@@ -1,10 +1,19 @@
+/* Skapat av Amanda Hwatz Björkholm 
+Moment 3 - Javascriptbaserad Webbutveckling*/
+
+// MongoDb
+// Lösen: nichof-6vewpo-sixbaW
+// Anv: Admin
+
 const express = require('express');
 const app = express();
 const fs = require('fs');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/myCourses', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost/myCourses', { useNewUrlParser: true });
 //mongoose.Promise = global.Promise;
+
+mongoose.connect("mongodb+srv://admin:nichof-6vewpo-sixbaW@cluster0.1oheg.mongodb.net/myCourses?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
@@ -13,8 +22,8 @@ db.once("open", () => console.log("Connected!"));
 
 // Sätter att inkommande data är json-objekt
 app.use(express.json());
-// const port = process.env.PORT;
-const port = 3000;
+const port = process.env.PORT;
+//const port = 3000;
 app.use(express.static(__dirname + '/courses'));
 
 
