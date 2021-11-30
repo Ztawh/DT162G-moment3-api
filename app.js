@@ -24,7 +24,7 @@ db.once("open", () => console.log("Connected!"));
 app.use(express.json());
 const port = process.env.PORT;
 //const port = 3000;
-app.use(express.static(__dirname + '/courses'));
+//app.use(express.static(__dirname + '/courses'));
 
 
 // app.listen(port, () => {
@@ -53,7 +53,7 @@ const Course = mongoose.model('courses', courseSchema);
 
 
 // GET kurser
-app.get('/courses', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const courses = await Course.find();
         res.json(courses);
