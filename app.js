@@ -1,9 +1,6 @@
 /* Skapat av Amanda Hwatz Björkholm 
 Moment 3 - Javascriptbaserad Webbutveckling*/
 
-// MongoDb
-// Lösen: nichof-6vewpo-sixbaW
-// Anv: Admin
 
 const express = require('express');
 const app = express();
@@ -12,7 +9,7 @@ const mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/myCourses', { useNewUrlParser: true });
 
 // Koppla upp till databas på Mlab
-mongoose.connect("mongodb+srv://admin:nichof-6vewpo-sixbaW@cluster0.1oheg.mongodb.net/myCourses?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://admin:lösen@cluster0.1oheg.mongodb.net/myCourses?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
